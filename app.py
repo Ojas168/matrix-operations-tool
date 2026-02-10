@@ -59,8 +59,19 @@ if st.button("Calculate"):
         if A is not None:
             st.write("Transpose of A:")
             st.table(A.T)
+    elif operation == "Transpose B":
+        if B is not None:
+            st.write("Transpose of B:")
+            st.table(B.T)
     elif operation == "Determinant A":
         if A is not None and A.shape[0] == A.shape[1]:
             st.success(f"Determinant of A: {np.linalg.det(A):.2f}")
         else:
+
             st.error("Matrix A must be square to calculate determinant")
+    elif operation == "Determinant B":
+        if B is not None and B.shape[0] == B.shape[1]:
+            st.success(f"Determinant of B: {np.linalg.det(B):.2f}")
+        else:
+
+            st.error("Matrix B must be square to calculate determinant")
