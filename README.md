@@ -1,3 +1,8 @@
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+![Streamlit](https://img.shields.io/badge/Streamlit-Web%20App-FF4B4B?logo=streamlit)
+![NumPy](https://img.shields.io/badge/NumPy-Scientific%20Computing-013243?logo=numpy)
+![MIT License](https://img.shields.io/badge/License-MIT-green)
+
 # 🧮 Matrix Operations Tool (Web App)
 
 A simple, interactive **web-based Matrix Operations Tool** built using **Python, NumPy, and Streamlit**.  
