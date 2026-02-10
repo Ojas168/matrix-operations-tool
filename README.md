@@ -55,7 +55,7 @@ This application allows users to input matrices of custom dimensions and perform
 ## 📦 Installation & Setup
 
 1️⃣ Clone the repository
-```bash
+
 git clone https://github.com/your-username/matrix-operations-tool.git
 cd matrix-operations-tool
 
@@ -66,6 +66,7 @@ pip install -r requirements.txt
 streamlit run app.py
 
 The app will automatically open in your browser.
+
 
 📸 Screenshots
 <img width="918" height="928" alt="1" src="https://github.com/user-attachments/assets/5fd84919-bf78-43d8-ab71-a19e598ae17c" />
