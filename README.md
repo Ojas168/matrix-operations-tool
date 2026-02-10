@@ -76,7 +76,7 @@ The app will automatically open in your browser.
 📸 Screenshots
 <img width="918" height="928" alt="1" src="https://github.com/user-attachments/assets/5fd84919-bf78-43d8-ab71-a19e598ae17c" />
 
-<img width="913" height="940" alt="2" src="https://github.com/user-attachments/assets/efe06a61-30e6-4b72-9b03-3a5e1c24da7b" />
+<img width="920" height="362" alt="2" src="https://github.com/user-attachments/assets/599217c2-ed10-4acc-a7c1-b3cd13d04f48" />
 
 ⚠️ Validation Rules
 
