@@ -1,10 +1,12 @@
 import streamlit as st
 import numpy as np
+
 st.title("🧮 Matrix Operations Tool")
 st.write("Enter matrices and perform operations easily!")
 rows = st.number_input("Number of rows", min_value=1, value=2)
 cols = st.number_input("Number of columns", min_value=1, value=2)
-def get_matrix(name, rows, cols):
+
+def get_matrix(name, rows, cols): # Function to get matrix input from user, including validation and returning as numpy array
     st.subheader(f"Matrix {name}")
     matrix = []
 
@@ -18,18 +20,19 @@ def get_matrix(name, rows, cols):
             return None
 
         try:
-            values = list(map(int,row.split())) 
+            values = list(map(int,row.split())) # Convert input string to list of integers
         except ValueError:
             st.error(f"Row {i + 1}: Please enter valid numbers")
             return None
 
-        if len(values) != cols:
+        if len(values) != cols: # Check if the number of values matches the expected number of columns
             st.error(f"Row {i + 1}: Exactly {cols} values required")
             return None
 
         matrix.append(values)
 
     return np.array(matrix)
+    
 A=get_matrix("A", rows, cols)
 B=get_matrix("B", rows, cols)
 operation = st.selectbox(
@@ -64,15 +67,16 @@ if st.button("Calculate"):
             st.write("Transpose of B:")
             st.table(B.T)
     elif operation == "Determinant A":
-        if A is not None and A.shape[0] == A.shape[1]:
+        if A is not None and A.shape[0] == A.shape[1]:  # Check if A is square
             st.success(f"Determinant of A: {np.linalg.det(A):}")
         else:
 
             st.error("Matrix A must be square to calculate determinant")
     elif operation == "Determinant B":
-        if B is not None and B.shape[0] == B.shape[1]:
+        if B is not None and B.shape[0] == B.shape[1]:  # Check if B is square
             st.success(f"Determinant of B: {np.linalg.det(B):}")
         else:
 
             st.error("Matrix B must be square to calculate determinant")
+
 
