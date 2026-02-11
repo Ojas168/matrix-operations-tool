@@ -42,12 +42,18 @@ operation = st.selectbox(
 if st.button("Calculate"):
     if operation == "Addition":
         if A is not None and B is not None:
-            st.write("Result of A + B:")
-            st.table(A + B)
+            if A.shape == B.shape: # Check if matrices have the same shape for addition
+                st.write("Result of A + B:")
+                st.table(A + B)
+            else:
+                st.error("Matrices A and B must have the same shape for addition")
     elif operation == "Subtraction":
         if A is not None and B is not None:
-            st.write("Result of A - B:")
-            st.table(A - B)
+            if A.shape == B.shape: # Check if matrices have the same shape for subtraction
+                st.write("Result of A - B:")
+                st.table(A - B)
+            else:
+                st.error("Matrices A and B must have the same shape for subtraction")
     elif operation == "Multiplication":
         if A is not None and B is not None:
             if A.shape[1] == B.shape[0]:
@@ -60,12 +66,18 @@ if st.button("Calculate"):
             )
     elif operation == "Transpose A":
         if A is not None:
-            st.write("Transpose of A:")
-            st.table(A.T)
+            if A.shape[0] == A.shape[1]: # Check if A is square for transpose
+                st.write("Transpose of A:")
+                st.table(A.T)
+            else:
+                st.error("Matrix A must be square to calculate transpose")
     elif operation == "Transpose B":
         if B is not None:
-            st.write("Transpose of B:")
-            st.table(B.T)
+            if B.shape[0] == B.shape[1]: # Check if B is square for transpose
+                st.write("Transpose of B:")
+                st.table(B.T)
+            else:
+                st.error("Matrix B must be square to calculate transpose")
     elif operation == "Determinant A":
         if A is not None and A.shape[0] == A.shape[1]:  # Check if A is square
             st.success(f"Determinant of A: {np.linalg.det(A):}")
@@ -78,5 +90,6 @@ if st.button("Calculate"):
         else:
 
             st.error("Matrix B must be square to calculate determinant")
+
 
 
